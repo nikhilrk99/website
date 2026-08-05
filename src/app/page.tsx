@@ -1,69 +1,112 @@
-import Image from "next/image";
+import Link from "next/link";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
+import { siteConfig } from "@/lib/site-config";
+import { projects } from "@/lib/projects";
+
+// TODO: replace testimonial placeholders with real LinkedIn testimonials.
+const testimonials = [
+  { quote: "[Add a LinkedIn testimonial quote here]", name: "[Name, Title]" },
+  { quote: "[Add a LinkedIn testimonial quote here]", name: "[Name, Title]" },
+  { quote: "[Add a LinkedIn testimonial quote here]", name: "[Name, Title]" },
+];
 
 export default function Home() {
+  const heroProject = projects[0];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <main className="flex-1">
+      {/* Landing */}
+      <section className="mx-auto flex w-full max-w-6xl flex-col items-center gap-10 px-6 py-24 sm:flex-row sm:py-32">
+        <div className="flex flex-1 flex-col gap-6 text-center sm:text-left">
+          <p className="font-mono text-sm uppercase tracking-widest text-signal">
+            [Add a large hook line here]
+          </p>
+          <h1 className="font-display text-5xl font-bold leading-tight text-offwhite sm:text-6xl">
+            [Add your headline here]
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="max-w-md text-lg text-muted sm:mx-0 mx-auto">
+            [Add a very short introductory paragraph about yourself here]
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        <ImagePlaceholder
+          label="Your photo"
+          className="aspect-square w-64 shrink-0 rounded-2xl sm:w-80"
+        />
+      </section>
+
+      {/* Hero project */}
+      <section className="mx-auto w-full max-w-6xl px-6 py-16">
+        <p className="font-mono text-sm uppercase tracking-widest text-muted">
+          Featured project
+        </p>
+        <Link
+          href={`/projects/${heroProject.slug}`}
+          className="group mt-6 flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-card transition-colors hover:border-signal/50 sm:flex-row"
+        >
+          <ImagePlaceholder
+            label="Hero project photo"
+            className="h-56 w-full sm:h-auto sm:w-1/2"
+          />
+          <div className="flex w-full flex-col justify-center gap-3 px-8 py-8 sm:w-1/2">
+            <h2 className="font-display text-3xl font-bold text-offwhite group-hover:text-signal">
+              {heroProject.title}
+            </h2>
+            <p className="text-muted">{heroProject.description}</p>
+          </div>
+        </Link>
+      </section>
+
+      {/* Navigation boxes */}
+      <section className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-6 px-6 py-16 sm:grid-cols-3">
+        {[
+          { href: "/projects", label: "Projects" },
+          { href: "/resume", label: "Resume" },
+          { href: "/about", label: "About Me" },
+        ].map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className="flex aspect-square flex-col items-start justify-end rounded-2xl border border-white/10 bg-card p-8 transition-colors hover:border-signal/50"
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <span className="font-display text-2xl font-bold text-offwhite">
+              {item.label}
+            </span>
+          </Link>
+        ))}
+      </section>
+
+      {/* Testimonials */}
+      <section className="mx-auto w-full max-w-6xl px-6 py-16">
+        <h2 className="font-display text-3xl font-bold text-offwhite">
+          What people say
+        </h2>
+        <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
+          {testimonials.map((testimonial, i) => (
+            <div
+              key={i}
+              className="flex flex-col justify-between gap-6 rounded-2xl border border-white/10 bg-card p-6"
+            >
+              <p className="text-offwhite">&ldquo;{testimonial.quote}&rdquo;</p>
+              <p className="font-mono text-sm text-muted">{testimonial.name}</p>
+            </div>
+          ))}
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* CTA */}
+      <section className="mx-auto flex w-full max-w-6xl flex-col items-center gap-6 px-6 py-24 text-center">
+        <h2 className="font-display text-3xl font-bold text-offwhite sm:text-4xl">
+          [Add a closing call-to-action line here]
+        </h2>
+        <a
+          href={siteConfig.calendarUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-full bg-signal px-8 py-3 font-mono text-sm uppercase tracking-wide text-offwhite transition-colors hover:bg-signal-deep"
+        >
+          Work with me
+        </a>
+      </section>
+    </main>
   );
 }

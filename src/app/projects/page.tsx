@@ -1,0 +1,37 @@
+import Link from "next/link";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
+import { projects } from "@/lib/projects";
+
+export default function ProjectsPage() {
+  return (
+    <main className="mx-auto w-full max-w-5xl flex-1 px-6 py-20">
+      <h1 className="font-display text-4xl font-bold text-offwhite sm:text-5xl">
+        Projects
+      </h1>
+      <p className="mt-3 max-w-xl text-muted">
+        [Add a short intro to your projects section here]
+      </p>
+
+      <div className="mt-12 flex flex-col gap-6">
+        {projects.map((project) => (
+          <Link
+            key={project.slug}
+            href={`/projects/${project.slug}`}
+            className="group flex overflow-hidden rounded-2xl border border-white/10 bg-card transition-colors hover:border-signal/50"
+          >
+            <ImagePlaceholder
+              label="Project photo"
+              className="w-1/4 shrink-0"
+            />
+            <div className="flex w-3/4 flex-col justify-center gap-2 px-8 py-6">
+              <h2 className="font-display text-2xl font-bold text-offwhite group-hover:text-signal">
+                {project.title}
+              </h2>
+              <p className="text-muted">{project.description}</p>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </main>
+  );
+}
