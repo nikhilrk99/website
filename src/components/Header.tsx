@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { siteConfig } from "@/lib/site-config";
+import ScrollLink from "@/components/ScrollLink";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -43,14 +44,12 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <a
-            href={siteConfig.calendarUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <ScrollLink
+            href="/#contact"
             className="rounded-full bg-signal px-5 py-2 font-mono text-sm uppercase tracking-wide text-offwhite transition-colors hover:bg-signal-deep"
           >
             Work with me
-          </a>
+          </ScrollLink>
 
           <button
             type="button"

@@ -3,7 +3,7 @@ import Link from "next/link";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import TestimonialCard from "@/components/TestimonialCard";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
-import { siteConfig } from "@/lib/site-config";
+import ContactForm from "@/components/ContactForm";
 import { projects } from "@/lib/projects";
 
 const testimonials = [
@@ -120,19 +120,20 @@ export default function Home() {
         </TestimonialCarousel>
       </section>
 
-      {/* CTA */}
-      <section className="mx-auto flex w-full max-w-6xl flex-col items-center gap-6 px-6 py-24 text-center">
-        <h2 className="font-display text-3xl font-bold text-offwhite sm:text-4xl">
-          [Add a closing call-to-action line here]
-        </h2>
-        <a
-          href={siteConfig.calendarUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="rounded-full bg-signal px-8 py-3 font-mono text-sm uppercase tracking-wide text-offwhite transition-colors hover:bg-signal-deep"
-        >
-          Work with me
-        </a>
+      {/* Contact form */}
+      <section
+        id="contact"
+        className="mx-auto flex w-full max-w-6xl flex-col items-center gap-8 px-6 py-24"
+      >
+        <div className="flex flex-col items-center gap-2 text-center">
+          <h2 className="font-display text-3xl font-bold text-offwhite sm:text-4xl">
+            Get in touch
+          </h2>
+          <p className="text-muted">
+            Have a role, a product question, or just want to say hi? Send me a message.
+          </p>
+        </div>
+        <ContactForm />
       </section>
     </main>
   );
