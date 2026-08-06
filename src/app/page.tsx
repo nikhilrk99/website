@@ -18,7 +18,7 @@ export default function Home() {
       {/* Landing */}
       <section className="mx-auto flex w-full max-w-6xl flex-col items-center gap-10 px-6 py-24 sm:flex-row sm:py-32">
         <div className="flex flex-1 flex-col gap-6 text-center sm:text-left">
-          <p className="font-mono text-sm uppercase tracking-widest text-signal">
+          <p className="font-mono text-md uppercase tracking-widest text-signal">
             [Add a large hook line here]
           </p>
           <h1 className="font-display text-5xl font-bold leading-tight text-offwhite sm:text-6xl">
