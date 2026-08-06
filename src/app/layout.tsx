@@ -19,7 +19,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "[Your Name]",
+  title: "Nikhil Koundinya",
   description: "[Add a short site description]",
 };
 

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import { siteConfig } from "@/lib/site-config";
@@ -19,18 +20,21 @@ export default function Home() {
       <section className="mx-auto flex w-full max-w-6xl flex-col items-center gap-10 px-6 py-24 sm:flex-row sm:py-32">
         <div className="flex flex-1 flex-col gap-6 text-center sm:text-left">
           <p className="font-mono text-md uppercase tracking-widest text-signal">
-            [Add a large hook line here]
+            Product Manager - AI / UX
           </p>
           <h1 className="font-display text-5xl font-bold leading-tight text-offwhite sm:text-6xl">
-            [Add your headline here]
+            Building products <span className="text-red-500">people</span> actually want to use
           </h1>
           <p className="max-w-md text-lg text-muted sm:mx-0 mx-auto">
             [Add a very short introductory paragraph about yourself here]
           </p>
         </div>
-        <ImagePlaceholder
-          label="Your photo"
-          className="aspect-square w-64 shrink-0 rounded-2xl sm:w-80"
+        <Image
+          src="/profile.jpg"
+          alt="Your photo"
+          width={320}
+          height={320}
+          className="aspect-square w-64 shrink-0 rounded-2xl object-cover sm:w-80"
         />
       </section>
 
@@ -41,11 +45,11 @@ export default function Home() {
         </p>
         <Link
           href={`/projects/${heroProject.slug}`}
-          className="group mt-6 flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-card transition-colors hover:border-signal/50 sm:flex-row"
+          className="group mt-6 flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-card transition-colors hover:border-signal/50 sm:h-[28rem] sm:flex-row"
         >
           <ImagePlaceholder
             label="Hero project photo"
-            className="h-56 w-full sm:h-auto sm:w-1/2"
+            className="h-[28rem] w-full sm:h-full sm:w-1/2"
           />
           <div className="flex w-full flex-col justify-center gap-3 px-8 py-8 sm:w-1/2">
             <h2 className="font-display text-3xl font-bold text-offwhite group-hover:text-signal">

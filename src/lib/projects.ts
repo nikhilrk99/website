@@ -7,13 +7,13 @@ export type Project = {
 // TODO: replace description placeholders with real copy.
 export const projects: Project[] = [
   {
-    slug: "harry-potter-battle-card-game",
-    title: "Harry Potter Battle Card Game",
+    slug: "ai-ux-researcher",
+    title: "AI UX Researcher",
     description: "[Add a short project description here]",
   },
   {
-    slug: "ai-ux-researcher",
-    title: "AI UX Researcher",
+    slug: "harry-potter-battle-card-game",
+    title: "Harry Potter Battle Card Game",
     description: "[Add a short project description here]",
   },
 ];
