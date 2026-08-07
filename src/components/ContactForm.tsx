@@ -86,7 +86,8 @@ export default function ContactForm() {
             name="name"
             type="text"
             required
-            className="w-full rounded-lg border border-white/10 bg-void px-4 py-3 text-offwhite outline-none transition-colors focus:border-signal"
+            placeholder="Full Name"
+            className="w-full rounded-lg border border-white/10 bg-void px-4 py-3 text-offwhite outline-none transition-colors placeholder:text-muted/50 focus:border-signal"
           />
         </div>
         <div>
@@ -101,7 +102,8 @@ export default function ContactForm() {
             name="email"
             type="email"
             required
-            className="w-full rounded-lg border border-white/10 bg-void px-4 py-3 text-offwhite outline-none transition-colors focus:border-signal"
+            placeholder="you@example.com"
+            className="w-full rounded-lg border border-white/10 bg-void px-4 py-3 text-offwhite outline-none transition-colors placeholder:text-muted/50 focus:border-signal"
           />
         </div>
       </div>
@@ -113,22 +115,38 @@ export default function ContactForm() {
         >
           Purpose <span className="text-signal" aria-hidden="true">*</span>
         </label>
-        <select
-          id="purpose"
-          name="purpose"
-          required
-          defaultValue=""
-          className="w-full rounded-lg border border-white/10 bg-void px-4 py-3 text-offwhite outline-none transition-colors focus:border-signal"
-        >
-          <option value="" disabled>
-            Select a reason
-          </option>
-          {purposes.map((purpose) => (
-            <option key={purpose} value={purpose}>
-              {purpose}
+        <div className="relative">
+          <select
+            id="purpose"
+            name="purpose"
+            required
+            defaultValue=""
+            className="w-full appearance-none rounded-lg border border-white/10 bg-void px-4 py-3 pr-10 text-offwhite outline-none transition-colors focus:border-signal"
+          >
+            <option value="" disabled>
+              Select a reason
             </option>
-          ))}
-        </select>
+            {purposes.map((purpose) => (
+              <option key={purpose} value={purpose}>
+                {purpose}
+              </option>
+            ))}
+          </select>
+          <svg
+            viewBox="0 0 20 20"
+            fill="none"
+            aria-hidden="true"
+            className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted"
+          >
+            <path
+              d="M5 7.5L10 12.5L15 7.5"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
       </div>
 
       <div>
@@ -143,7 +161,8 @@ export default function ContactForm() {
           name="message"
           required
           rows={5}
-          className="w-full resize-none rounded-lg border border-white/10 bg-void px-4 py-3 text-offwhite outline-none transition-colors focus:border-signal"
+          placeholder="What's on your mind?"
+          className="w-full resize-none rounded-lg border border-white/10 bg-void px-4 py-3 text-offwhite outline-none transition-colors placeholder:text-muted/50 focus:border-signal"
         />
       </div>
 
