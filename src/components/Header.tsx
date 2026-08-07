@@ -13,12 +13,20 @@ const navLinks = [
   { href: "/about", label: "About Me" },
 ];
 
+// Pages with their own #contact section — elsewhere, "Work with me" falls
+// back to the one on the home page.
+const pagesWithContactForm = ["/", "/about"];
+
 export default function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
+
+  const workWithMeHref = pagesWithContactForm.includes(pathname)
+    ? `${pathname}#contact`
+    : "/#contact";
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-void/90 backdrop-blur">
@@ -45,7 +53,7 @@ export default function Header() {
 
         <div className="flex items-center gap-4">
           <ScrollLink
-            href="/#contact"
+            href={workWithMeHref}
             className="rounded-full bg-signal px-5 py-2 font-mono text-sm uppercase tracking-wide text-offwhite transition-colors hover:bg-signal-deep"
           >
             Work with me
