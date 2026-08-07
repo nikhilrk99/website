@@ -14,7 +14,8 @@ export default function ResumePage() {
         </span>
         <a
           href={siteConfig.resumeUrl}
-          download
+          target="_blank"
+          rel="noopener noreferrer"
           className="shrink-0 rounded-full bg-signal px-6 py-2.5 font-mono text-sm uppercase tracking-wide text-offwhite transition-colors hover:bg-signal-deep"
         >
           View Resume PDF
