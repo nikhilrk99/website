@@ -57,7 +57,7 @@ export const projects: Project[] = [
       { value: "100+", label: "Outreach to designers and researchers" },
       { value: "15", label: "User interviews conducted" },
     ],
-    tools: ["Vercel v0", "User Interviews", "Sales pitch"],
+    tools: ["Claude Design", "User Interviews", "Sales pitch"],
     fullBreakdown: `
       **Where this came from**
 
@@ -77,25 +77,25 @@ export const projects: Project[] = [
 
       I reached out to over 100 UX researchers and designers. Around 15 have talked to me so far.
 
-     * **Cost**: $10 to $50 per participant depending on how niche the audience is, at 8 to 10 participants per test and 1 to 2 tests a month. A $25 per user test with 8 participants is $200, putting a single researcher at roughly $300 a month on unmoderated testing alone.
-     * **Time**: 2 to 3 weeks end to end, from scoping with the product team through analysis.
-     * **Quality**: This tracks with sourcing. Researchers with a curated panel are satisfied. Those recruiting from the general public are not. One estimated up to 20% of participants were fraudulent.
-     * **The surprise**: Unmoderated tests are only about 30% of their volume despite being cheaper and parallelizable, because the quality problem pushes them toward moderated sessions.
-     * **A gap I did not expect**: Analysis tooling is weak across the board, so results get exported elsewhere or worked through manually in Excel.
+      * **Cost**: $10 to $50 per participant depending on how niche the audience is, at 8 to 10 participants per test and 1 to 2 tests a month. A $25 per user test with 8 participants is $200, putting a single researcher at roughly $300 a month on unmoderated testing alone.
+      * **Time**: 2 to 3 weeks end to end, from scoping with the product team through analysis.
+      * **Quality**: This tracks with sourcing. Researchers with a curated panel are satisfied. Those recruiting from the general public are not. One estimated up to 20% of participants were fraudulent.
+      * **The surprise**: Unmoderated tests are only about 30% of their volume despite being cheaper and parallelizable, because the quality problem pushes them toward moderated sessions.
+      * **A gap I did not expect**: Analysis tooling is weak across the board, so results get exported elsewhere or worked through manually in Excel.
 
-    **The prototype, and where it stands**
+      **The prototype, and where it stands**
 
-    To make those calls more useful, I built a high fidelity prototype instead of describing the idea verbally. v0 was my AI prototyping tool of choice. Walking researchers through a working interface produced far sharper feedback than a pitch would have.
+      To make those calls more useful, I built a high fidelity prototype instead of describing the idea verbally. I started in v0 and later moved it to Claude Design. Walking researchers through a working interface produced far sharper feedback than a pitch would have.
 
-    * Roughly **80%** said they would pay for it, and a few asked for early access assuming it was already live.
-    * The framing they gave me mattered more than the enthusiasm. They saw it as an early directional signal for iterating before committing to a human study, not as a replacement for one.
-    * Several wanted to hand it to PMs and designers so smaller tests stop landing on the research team.
-    * Some were flatly skeptical and said they would not use it, which is a signal I am still working to understand.
+      * Roughly **80%** said they would pay for it, and a few asked for early access assuming it was already live.
+      * The framing they gave me mattered more than the enthusiasm. They saw it as an early directional signal for iterating before committing to a human study, not as a replacement for one.
+      * Several wanted to hand it to PMs and designers so smaller tests stop landing on the research team.
+      * Some were flatly skeptical and said they would not use it, which is a signal I am still working to understand.
 
-    The project is in discovery. I am continuing interviews, and the next step is building an MVP I can actually sell.`,
+      The project is in discovery. I am continuing interviews, and the next step is building an MVP I can actually sell.`,
     confidentialityNote:
       "",
-    link: { label: "View the prototype", href: "#" },
+    link: { label: "View the prototype", href: "https://claude.ai/code/artifact/600ca869-57f5-4abf-8eda-e4c15a46d470" },
   },
   {
     slug: "hp-battle-card-game",
