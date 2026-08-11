@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import ScrollReveal from "@/components/ScrollReveal";
 import { siteConfig } from "@/lib/site-config";
 import { jobHistory } from "@/lib/resume";
 import { formatBoldText } from "@/lib/format-bold-text";
@@ -7,7 +8,7 @@ import { formatBoldText } from "@/lib/format-bold-text";
 export default function ResumePage() {
   return (
     <main className="mx-auto w-full max-w-4xl flex-1 px-6 py-20">
-      <div className="flex w-full flex-col items-center justify-between gap-4 rounded-2xl border border-white/10 bg-card px-8 py-8 text-center sm:flex-row sm:text-left">
+      <ScrollReveal className="flex w-full flex-col items-center justify-between gap-4 rounded-2xl border border-white/10 bg-card px-8 py-8 text-center sm:flex-row sm:text-left">
         <span className="flex items-center gap-2 font-display text-xl font-bold text-offwhite sm:text-2xl">
           Skip the scroll, get the PDF
           <span className="text-signal" aria-hidden="true">&rarr;</span>
@@ -20,12 +21,13 @@ export default function ResumePage() {
         >
           View Resume PDF
         </a>
-      </div>
+      </ScrollReveal>
 
       <div className="mt-16 flex flex-col gap-10">
         {jobHistory.map((job, i) => (
-          <div
+          <ScrollReveal
             key={i}
+            delay={i * 0.08}
             className="flex flex-col gap-3 border-b border-white/10 pb-8 last:border-none"
           >
             <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-8">
@@ -75,7 +77,7 @@ export default function ResumePage() {
                 <li key={j}>{formatBoldText(bullet)}</li>
               ))}
             </ul>
-          </div>
+          </ScrollReveal>
         ))}
       </div>
     </main>

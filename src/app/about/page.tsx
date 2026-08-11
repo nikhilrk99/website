@@ -1,5 +1,10 @@
 import { coreValues } from "@/lib/about";
 import ContactForm from "@/components/ContactForm";
+import ScrollReveal from "@/components/ScrollReveal";
+
+// Incrementing per-section delay so the page cascades in on load/scroll
+// instead of every section fading up simultaneously.
+const STAGGER = 0.08;
 
 const bio = [
   `I found product at a college recruiting seminar. Someone described the job and I realized I had been doing an unpaid version of it my whole life. Pulling apps apart, complaining about the ones that got it wrong, sketching the ones that should have existed. I had never thought of it as work. It was the first time a career felt obvious to me.`,
@@ -12,7 +17,10 @@ export default function AboutPage() {
   return (
     <main className="mx-auto w-full max-w-6xl flex-1 px-6 py-20">
       <div className="flex flex-col gap-16 sm:flex-row">
-        <div className="flex flex-1 flex-col gap-6 sm:flex-[3]">
+        <ScrollReveal
+          delay={0 * STAGGER}
+          className="flex flex-1 flex-col gap-6 sm:flex-[3]"
+        >
           <h1 className="font-display text-3xl font-bold text-offwhite sm:text-4xl">
             Hi, I'm Nikhil.
           </h1>
@@ -21,31 +29,39 @@ export default function AboutPage() {
               {paragraph}
             </p>
           ))}
-        </div>
+        </ScrollReveal>
 
-        <div className="flex flex-1 flex-col gap-6 sm:flex-[2]">
+        <ScrollReveal
+          delay={1 * STAGGER}
+          className="flex flex-1 flex-col gap-6 sm:flex-[2]"
+        >
           <div className="flex flex-col gap-6">
             <h2 className="font-display text-2xl font-bold text-offwhite">
               Core values &amp; beliefs
             </h2>
             <div className="flex flex-col gap-6">
               {coreValues.map((value, i) => (
-                <div
+                <ScrollReveal
                   key={i}
+                  delay={1 * STAGGER + i * 0.06}
                   className="rounded-2xl border border-white/10 bg-card p-6"
                 >
                   <h3 className="font-display text-lg font-bold text-signal">
                     {value.title}
                   </h3>
                   <p className="mt-2 text-muted">{value.description}</p>
-                </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
 
-      <div id="contact" className="mt-24 flex w-full flex-col items-center gap-8">
+      <ScrollReveal
+        delay={2 * STAGGER}
+        id="contact"
+        className="mt-24 flex w-full flex-col items-center gap-8"
+      >
         <div className="flex flex-col items-center gap-2 text-center">
           <h2 className="font-display text-3xl font-bold text-offwhite sm:text-4xl">
             Get in touch
@@ -55,7 +71,7 @@ export default function AboutPage() {
           </p>
         </div>
         <ContactForm />
-      </div>
+      </ScrollReveal>
     </main>
   );
 }

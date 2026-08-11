@@ -1,10 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import ScrollReveal from "@/components/ScrollReveal";
 import TestimonialCard from "@/components/TestimonialCard";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import ContactForm from "@/components/ContactForm";
 import { projects } from "@/lib/projects";
+
+// Incrementing per-section delay so the page cascades in on load/scroll
+// instead of every section fading up simultaneously.
+const STAGGER = 0.08;
 
 const testimonials = [
   {
@@ -41,7 +46,10 @@ export default function Home() {
   return (
     <main className="flex-1">
       {/* Landing */}
-      <section className="mx-auto flex w-full max-w-6xl flex-col items-center gap-10 px-6 py-24 sm:flex-row sm:py-32">
+      <ScrollReveal
+        delay={0 * STAGGER}
+        className="mx-auto flex w-full max-w-6xl flex-col items-center gap-10 px-6 py-24 sm:flex-row sm:py-32"
+      >
         <div className="flex flex-1 flex-col gap-6 text-center sm:text-left">
           <p className="font-mono text-md uppercase tracking-widest text-signal">
             Product Manager - AI / UX
@@ -60,10 +68,13 @@ export default function Home() {
           height={320}
           className="aspect-square w-64 shrink-0 rounded-2xl object-cover sm:w-80"
         />
-      </section>
+      </ScrollReveal>
 
       {/* Hero project */}
-      <section className="mx-auto w-full max-w-6xl px-6 py-16">
+      <ScrollReveal
+        delay={1 * STAGGER}
+        className="mx-auto w-full max-w-6xl px-6 py-16"
+      >
         <p className="font-mono text-sm uppercase tracking-widest text-muted">
           Featured project
         </p>
@@ -82,7 +93,7 @@ export default function Home() {
             <p className="text-muted">{heroProject.description}</p>
           </div>
         </Link>
-      </section>
+      </ScrollReveal>
 
       {/* Navigation boxes */}
       <section className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-6 px-6 py-16 sm:grid-cols-3">
@@ -90,21 +101,25 @@ export default function Home() {
           { href: "/projects", label: "Projects" },
           { href: "/resume", label: "Resume" },
           { href: "/about", label: "About Me" },
-        ].map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className="flex aspect-square flex-col items-start justify-end rounded-2xl border border-white/10 bg-card p-8 transition-colors hover:border-signal/50"
-          >
-            <span className="font-display text-2xl font-bold text-offwhite">
-              {item.label}
-            </span>
-          </Link>
+        ].map((item, i) => (
+          <ScrollReveal key={item.href} delay={2 * STAGGER + i * 0.06}>
+            <Link
+              href={item.href}
+              className="flex aspect-square flex-col items-start justify-end rounded-2xl border border-white/10 bg-card p-8 transition-colors hover:border-signal/50"
+            >
+              <span className="font-display text-2xl font-bold text-offwhite">
+                {item.label}
+              </span>
+            </Link>
+          </ScrollReveal>
         ))}
       </section>
 
       {/* Testimonials */}
-      <section className="mx-auto w-full max-w-6xl px-6 py-16">
+      <ScrollReveal
+        delay={3 * STAGGER}
+        className="mx-auto w-full max-w-6xl px-6 py-16"
+      >
         <h2 className="font-display text-3xl font-bold text-offwhite">
           What people say
         </h2>
@@ -118,10 +133,11 @@ export default function Home() {
             </div>
           ))}
         </TestimonialCarousel>
-      </section>
+      </ScrollReveal>
 
       {/* Contact form */}
-      <section
+      <ScrollReveal
+        delay={4 * STAGGER}
         id="contact"
         className="mx-auto flex w-full max-w-6xl flex-col items-center gap-8 px-6 py-24"
       >
@@ -134,7 +150,7 @@ export default function Home() {
           </p>
         </div>
         <ContactForm />
-      </section>
+      </ScrollReveal>
     </main>
   );
 }
