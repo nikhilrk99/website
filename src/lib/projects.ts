@@ -32,16 +32,15 @@ export type Project = {
   link?: ProjectLink;
 };
 
-// TODO: replace placeholders with real project copy.
 export const projects: Project[] = [
   {
     slug: "ai-ux-researcher",
     title: "AI UX Researcher",
-    description: "Testing",
+    description: "Synthetic users that run your usability tests.",
     context: "Personal",
     role: "[Add your role on this project]",
     hasPhoto: false,
-    photo: "", // e.g. "/projects/ai-ux-researcher.jpg"
+    photo: "/uxresearch.png",
     brief: 
     `Most unmoderated usability testing today runs on panels of paid participants, and that model has three problems I kept hearing about. Feedback quality is uneven when people are optimizing for a quick incentive. Costs scale linearly, so testing twenty users across a handful of flows adds up quickly. And recruiting takes days, which pushes teams to test once at the end rather than continuously.
 

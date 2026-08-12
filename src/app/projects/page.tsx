@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -26,10 +27,19 @@ export default function ProjectsPage() {
               href={`/projects/${project.slug}`}
               className="group flex overflow-hidden rounded-2xl border border-white/10 bg-card transition-colors hover:border-signal/50"
             >
-              <ImagePlaceholder
-                label="Project photo"
-                className="w-1/4 shrink-0"
-              />
+              <div className="relative w-1/4 shrink-0">
+                {project.photo ? (
+                  <Image
+                    src={project.photo}
+                    alt={`${project.title} photo`}
+                    fill
+                    sizes="25vw"
+                    className="object-cover"
+                  />
+                ) : (
+                  <ImagePlaceholder label="Project photo" className="h-full w-full" />
+                )}
+              </div>
               <div className="flex w-3/4 flex-col justify-center gap-2 px-8 py-6">
                 <h2 className="font-display text-2xl font-bold text-offwhite group-hover:text-signal">
                   {project.title}

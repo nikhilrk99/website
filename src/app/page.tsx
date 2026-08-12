@@ -82,10 +82,19 @@ export default function Home() {
           href={`/projects/${heroProject.slug}`}
           className="group mt-6 flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-card transition-colors hover:border-signal/50 sm:h-[28rem] sm:flex-row"
         >
-          <ImagePlaceholder
-            label="Hero project photo"
-            className="h-[28rem] w-full sm:h-full sm:w-1/2"
-          />
+          <div className="relative h-[28rem] w-full sm:h-full sm:w-1/2">
+            {heroProject.photo ? (
+              <Image
+                src={heroProject.photo}
+                alt={`${heroProject.title} photo`}
+                fill
+                sizes="(min-width: 640px) 50vw, 100vw"
+                className="object-cover"
+              />
+            ) : (
+              <ImagePlaceholder label="Hero project photo" className="h-full w-full" />
+            )}
+          </div>
           <div className="flex w-full flex-col justify-center gap-3 px-8 py-8 sm:w-1/2">
             <h2 className="font-display text-3xl font-bold text-offwhite group-hover:text-signal">
               {heroProject.title}
