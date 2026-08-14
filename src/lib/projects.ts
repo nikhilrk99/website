@@ -99,26 +99,32 @@ export const projects: Project[] = [
   {
     slug: "hp-battle-card-game",
     title: "Harry Potter Battle Card Game",
-    description: "[Add a short project description here]",
+    description: "Everything you wanted from a wizarding duel, minus the detention.",
     context: "Personal",
     role: "[Add your role on this project]",
     hasPhoto: true,
     photo: "", // e.g. "/projects/hp-battle-card-game.jpg"
-    brief: "[Add a short paragraph summarizing the project]",
+    brief: "I designed a wizarding duel that plays out across a table with a single deck and a pair of dice. Two players start at ten hearts, draw a hand, and reveal a spell at the same moment, then roll to see whether it finds its target. Because neither side knows what the other has committed to, every turn is a read on your opponent as much as a choice from your own hand. Most of the design work went into the relationship between damage and probability, making the devastating spells hard enough to land that reaching for them is a real gamble, and the reliable ones modest enough that a duel has room to swing.",
     whatIDid: [
-      "[Add a bullet describing what you did]",
-      "[Add another bullet]",
-      "[Add another bullet]",
+      "Designed the 52-card spell set around a damage and probability curve",
+      "Wrote the rules and resolved the edge cases",
+      "Created a Claude Artifact to playtest the game and collect feedback",
     ],
     results: [
-      { value: "[#]", label: "[Add a stat label]" },
-      { value: "[#]", label: "[Add a stat label]" },
+    
     ],
-    tools: ["[Tool]", "[Tool]", "[Tool]"],
-    fullBreakdown: `[Add the full write-up for this project here — background, process, and outcome.
+    tools: ["Claude Artifacts", "Google Docs"],
+    fullBreakdown: 
+    `Fans of most fictional universes imagine themselves as a character. People want to be Batman, Spider-Man, Iron Man. Harry Potter works differently. The fans I know don't want to be Harry, they want to be themselves in that world, holding their own wand, sorted into their own house, casting the spells they've had memorised since they were eleven. That distinction turned out to be the whole design brief. A game built on it can't ask you to play as someone. It has to hand you a wand and get out of the way.
 
-Leave a blank line between paragraphs to break them up.]`,
-    link: { label: "[Add link label, e.g. View on GitHub]", href: "#" },
+    The idea arrived somewhere between a run of board game nights and another rewatch of the films. A duel between two friends, fought with spell cards. Each spell carries a damage rating and a probability of connecting, you reveal your card, roll to see whether it lands, and track your health down from ten. No characters to pick, no abilities to inherit. The only thing separating the two players is what's in their hand and what they do with it.
+
+    I started a document to work through the mechanics and built out the full spell list, giving each one a damage value and a hit probability tied to specific dice outcomes. The two ends of that range set the rule for everything in between. Avada Kedavra ends the duel on contact, so it has to be the hardest thing in the deck to land, sitting at two sixes on a double roll. Stupefy is the spell everyone knows and everyone throws, so it does modest damage but connects five times out of six. Every other card was placed on the line between those two, and I added healing, defensive spells and special effects on top so the duel had a shape beyond trading damage.
+
+    Playtesting was the next problem. Printing real cards was too slow and too expensive for something still changing every few days, so I used Claude Artifacts to build a playable prototype instead. I handed it the rules document, the card wireframes and the spell list with their characteristics, and got back a working version I could play myself and send to other people. Feedback came back in days instead of weeks.
+
+    That loop is what let me rebalance properly. I adjusted damage values and hit probabilities until the devastating spells stayed genuinely rare and the safe ones stayed worth playing. Next is another pass on the mechanics, particularly status effects and how long they persist. Longer term, a licensed version would need the right partner, and that's a conversation worth having once the design holds up on its own.`,
+    link: { label: "Play the prototype here", href: "https://claude.ai/public/artifacts/3a3c5d33-8e6d-4018-891b-6af72f1d34e3" },
   },
 ];
 

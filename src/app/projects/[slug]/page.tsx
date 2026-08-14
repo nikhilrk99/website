@@ -92,27 +92,29 @@ export default async function ProjectDetailPage({
         </ul>
       </ScrollReveal>
 
-      <ScrollReveal delay={3 * STAGGER} className="mt-16">
-        <h2 className="font-display text-2xl font-bold text-offwhite">
-          Results
-        </h2>
-        <div className="mt-6 flex flex-wrap gap-6">
-          {project.results.map((stat, i) => (
-            <ScrollReveal
-              key={i}
-              delay={3 * STAGGER + i * 0.06}
-              className="min-w-[140px] flex-1 rounded-2xl border border-white/10 bg-card p-6 text-center"
-            >
-              <p className="font-display text-3xl font-bold text-signal sm:text-4xl">
-                {stat.value}
-              </p>
-              <p className="mt-2 font-mono text-xs uppercase tracking-wide text-muted">
-                {stat.label}
-              </p>
-            </ScrollReveal>
-          ))}
-        </div>
-      </ScrollReveal>
+      {project.results.length > 0 && (
+        <ScrollReveal delay={3 * STAGGER} className="mt-16">
+          <h2 className="font-display text-2xl font-bold text-offwhite">
+            Results
+          </h2>
+          <div className="mt-6 flex flex-wrap gap-6">
+            {project.results.map((stat, i) => (
+              <ScrollReveal
+                key={i}
+                delay={3 * STAGGER + i * 0.06}
+                className="min-w-[140px] flex-1 rounded-2xl border border-white/10 bg-card p-6 text-center"
+              >
+                <p className="font-display text-3xl font-bold text-signal sm:text-4xl">
+                  {stat.value}
+                </p>
+                <p className="mt-2 font-mono text-xs uppercase tracking-wide text-muted">
+                  {stat.label}
+                </p>
+              </ScrollReveal>
+            ))}
+          </div>
+        </ScrollReveal>
+      )}
 
       <ScrollReveal delay={4 * STAGGER} className="mt-16">
         <h2 className="font-display text-2xl font-bold text-offwhite">
