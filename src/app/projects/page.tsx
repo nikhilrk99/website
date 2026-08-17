@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import RevealOnMount from "@/components/RevealOnMount";
 import ScrollReveal from "@/components/ScrollReveal";
 import { projects } from "@/lib/projects";
 
@@ -21,8 +22,8 @@ export default function ProjectsPage() {
       </ScrollReveal>
 
       <div className="mt-12 flex flex-col gap-6">
-        {projects.map((project, i) => (
-          <ScrollReveal key={project.slug} delay={1 * STAGGER + i * 0.08}>
+        {projects.map((project, i) => {
+          const card = (
             <Link
               href={`/projects/${project.slug}`}
               className="group flex overflow-hidden rounded-2xl border border-white/10 bg-card transition-colors hover:border-signal/50"
@@ -47,8 +48,24 @@ export default function ProjectsPage() {
                 <p className="text-muted">{project.description}</p>
               </div>
             </Link>
-          </ScrollReveal>
-        ))}
+          );
+
+          // The first 4 cards fit in the initial viewport, so they fade in
+          // on mount instead of waiting on a scroll-triggered reveal.
+          if (i < 4) {
+            return (
+              <RevealOnMount key={project.slug} delay={1 * STAGGER + i * 0.08}>
+                {card}
+              </RevealOnMount>
+            );
+          }
+
+          return (
+            <ScrollReveal key={project.slug} delay={1 * STAGGER + i * 0.08}>
+              {card}
+            </ScrollReveal>
+          );
+        })}
       </div>
     </main>
   );
