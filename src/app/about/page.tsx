@@ -57,21 +57,22 @@ export default function AboutPage() {
         </ScrollReveal>
       </div>
 
-      <ScrollReveal
-        delay={2 * STAGGER}
-        id="contact"
-        className="mt-24 flex w-full flex-col items-center gap-8"
-      >
-        <div className="flex flex-col items-center gap-2 text-center">
-          <h2 className="font-display text-3xl font-bold text-offwhite sm:text-4xl">
-            Get in touch
-          </h2>
-          <p className="text-muted">
-            Have a role, a product question, or just want to say hi? Send me a message.
-          </p>
-        </div>
-        <ContactForm />
-      </ScrollReveal>
+      <div id="contact" className="mt-24">
+        <ScrollReveal
+          delay={2 * STAGGER}
+          className="flex w-full flex-col items-center gap-8"
+        >
+          <div className="flex flex-col items-center gap-2 text-center">
+            <h2 className="font-display text-3xl font-bold text-offwhite sm:text-4xl">
+              Get in touch
+            </h2>
+            <p className="text-muted">
+              Have a role, a product question, or just want to say hi? Send me a message.
+            </p>
+          </div>
+          <ContactForm />
+        </ScrollReveal>
+      </div>
     </main>
   );
 }

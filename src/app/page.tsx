@@ -145,21 +145,22 @@ export default function Home() {
       </ScrollReveal>
 
       {/* Contact form */}
-      <ScrollReveal
-        delay={4 * STAGGER}
-        id="contact"
-        className="mx-auto flex w-full max-w-6xl flex-col items-center gap-8 px-6 py-24"
-      >
-        <div className="flex flex-col items-center gap-2 text-center">
-          <h2 className="font-display text-3xl font-bold text-offwhite sm:text-4xl">
-            Get in touch
-          </h2>
-          <p className="text-muted">
-            Have a role, a product question, or just want to say hi? Send me a message.
-          </p>
-        </div>
-        <ContactForm />
-      </ScrollReveal>
+      <div id="contact" className="mx-auto w-full max-w-6xl px-6 py-16">
+        <ScrollReveal
+          delay={4 * STAGGER}
+          className="flex w-full flex-col items-center gap-8"
+        >
+          <div className="flex flex-col items-center gap-2 text-center">
+            <h2 className="font-display text-3xl font-bold text-offwhite sm:text-4xl">
+              Get in touch
+            </h2>
+            <p className="text-muted">
+              Have a role, a product question, or just want to say hi? Send me a message.
+            </p>
+          </div>
+          <ContactForm />
+        </ScrollReveal>
+      </div>
     </main>
   );
 }
