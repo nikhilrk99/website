@@ -16,7 +16,7 @@ export default function ProjectsPage() {
           Projects
         </h1>
         <p className="mt-3 max-w-xl text-muted">
-          [Add a short intro to your projects section here]
+          A few problems I've worked on, and how I thought through them.
         </p>
       </ScrollReveal>
 
