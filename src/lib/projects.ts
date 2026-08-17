@@ -126,6 +126,81 @@ export const projects: Project[] = [
     That loop is what let me rebalance properly. I adjusted damage values and hit probabilities until the devastating spells stayed genuinely rare and the safe ones stayed worth playing. Next is another pass on the mechanics, particularly status effects and how long they persist. Longer term, a licensed version would need the right partner, and that's a conversation worth having once the design holds up on its own.`,
     link: { label: "Play the prototype here", href: "https://claude.ai/public/artifacts/3a3c5d33-8e6d-4018-891b-6af72f1d34e3" },
   },
+  {
+    slug: "workflow-manager",
+    title: "Workflow Manager",
+    description: "Create your entire contract automation workflow self-serve.",
+    context: "Work",
+    role: "Lead Product Manager",
+    hasPhoto: true,
+    photo: "", // e.g. "/projects/hp-battle-card-game.jpg"
+    brief: 
+    `Creating contracts was slow and inconsistent. Every workflow depended on manual setup, business teams waited on legal to draft and route each contract, and approvals happened ad-hoc with no guaranteed compliance. Workflow Manager is a no-code tool that lets companies build their own contract workflows in a self-serve manner. Teams create contracts faster using templates and forms, and every contract stays compliant through automated conditional approvals that route to the right stakeholders.
+
+    I owned the product definition, from the business logic to the end-to-end user flows. I worked closely with engineering and design to take the tool from concept to launch, running the project across a 3+ month build to ship on deadline.`,
+    whatIDid: [
+      "Designed end-to-end user flows in partnership with engineering and design, letting users build their own contract workflows in a self-serve manner.",
+      "Defined the business logic for a one-click workflow migration tool, specifying edge cases and system behavior end-to-end.",
+      "Ran the project across engineering for 3+ months, managing scope and sequencing to ship on deadline.",
+    ],
+    results: [
+      { value: "20+", label: "Hours saved per user per month" },
+      { value: "$50k+", label: "ARR generated within 3 months" },
+      { value: "1000+", label: "Workflows migrated to new platform"}
+    ],
+    tools: ["Figma", "Google Docs", "SQL", "User Testing", "Product Discovery", "Amplitude"],
+    fullBreakdown: 
+    `
+    **Design to launch**
+    Workflow Manager was the first project I was handed when I joined SpotDraft as an APM in 2023. The product vision and high-level flow were set, but the design was still early, and my job was to iterate it into something buildable and milestone the work. I worked with designers to sketch the user flow and define the state for every screen, solutioning through a series of edge cases along the way. In parallel, I worked with engineering to plan sprints and set the milestones that carried the project from design to release.
+    
+    **Seamless migration, lasting platform**
+    Existing customers had workflows in the older system that all needed to move over, and we expected friction, so the migration had to feel effortless with no data loss and no disruption. We built a self-serve flow that moved a user's workflows in 2 to 3 clicks, with nothing lost. Post-launch, Workflow Manager became the default platform other features were built on, the base layer where customers configure their contract workflows. I worked with other pods to integrate their features into it and owned the UX across the platform as it grew.
+
+    **Usage-based billing, still running today**
+    The platform also gave Customer Success clear visibility into usage. Customers were billed per workflow, but before Workflow Manager, CSMs struggled to pull accurate figures to bill against. The new platform gave them a clean view of actual usage, and within three months of launch and migration, accurate usage-based billing lifted ARR by more than $50k. Workflow Manager is still live today, and still the foundation for how SpotDraft customers build their contracting workflows.
+    `,
+    link: { label: "Learn More about Workflows on SpotDraft", href: "https://www.spotdraft.com/products/contract-workflow" },
+  },
+  {
+    slug: "signing-queue",
+    title: "Signing Queue",
+    description: "Sign every pending contract in one seamless flow.",
+    context: "Work",
+    role: "Lead Product Manager",
+    hasPhoto: true,
+    photo: "", // e.g. "/projects/hp-battle-card-game.jpg"
+    brief: 
+    `Signing contracts was a stop-start process. People would sign one, leave the tool, and forget the three others sitting in their queue, so backlogs grew and deals stalled. Signing Queue fixed the flow itself. Once you sign a contract, it automatically surfaces the others waiting on your signature and lines them up to clear one by one.
+
+    Paired with Contract Context, which pulls the key details of each contract right onto the signing page, users no longer had to dig through documents to feel sure about what they were signing. Together the two cut signing dropoff and helped users work down their unsigned backlog instead of letting it pile up.`,
+    whatIDid: [
+      "Ran discovery with customers and SMEs to understand the backlog problem and how people were working around it today.",
+      "Partnered with Engineering and Design to shape the feature and take it from idea to launch.",
+      "Worked with CSMs and Marketing on rollout, gathering early feedback and tracking real usage.",
+    ],
+    results: [
+      { value: "45%", label: "Reduction in unsigned contract backlog" },
+      { value: "35%", label: "Reduction of drop-off while signing" },
+      { value: "1000+", label: "Contract signed in queue"}
+    ],
+    tools: ["Figma", "Google Docs", "SQL", "User Testing", "Product Discovery", "Amplitude"],
+    fullBreakdown: 
+    `
+    **The problem I was handed*
+    This started as a direction from leadership: make it possible to sign multiple contracts in one flow. Before building anything, I ran discovery with customers and SMEs, including our own CEO, who's a power user of the product. What I learned reframed the problem. Every B2B SaaS deal involves a stack of contracts, a SaaS agreement, an order form, NDAs, and so on. They all get sent to the same signatory, but each one lands as a separate signing request. That fragmentation had a cost: with contracts arriving as scattered individual requests, some would fall through the cracks and go unsigned, stalling the deals that depended on them. Users were coping by opening every request in its own browser tab and working through them one at a time. I also learned the primary persona was C-suite and senior executives, the people signing the most and with the least patience for friction.
+    
+    **Framing the problem and shaping a solution**
+    The workaround users had invented was a symptom of something bigger. When I looked at the data, there was a significant backlog of unsigned contracts sitting in the system, real proof that contracts were slipping through the cracks and deals were stalling because of it. That gave the project a clear commercial stake, not just a UX one. From there I worked with design and engineering to shape a solution. We took cues from the workaround users had built for themselves, and from Slack's catch-up pattern, and landed on a queue: sign one contract, get moved straight to the next, and work through the whole stack without ever leaving the flow.
+
+    **The signal we'd planned for**
+    We shipped v1 and watched usage in Amplitude, and a pattern showed up fast. Users were dropping out after signing two contracts, even when they had more still pending. Interviews told us why: people didn't have enough context on each contract to sign it confidently, so rather than sign blind, they bailed. We'd anticipated exactly this and had an enhancement on the roadmap called Contract Context, which surfaces the key details of a contract directly on the signing page. It was originally slated for later, in v3, but the data was telling us it was the thing standing between users and the full flow, so we pivoted and pulled it forward. Instead of leaving the flow to go dig for information, signers now get everything they need to commit right where they are.
+    
+    **The results**
+    Once Contract Context shipped, the numbers moved. We saw a 45% reduction in the unsigned contract backlog and a 35% cut in signing dropoff. Beyond the metrics, we got strong feedback from senior stakeholders on the customer side, and it turned sentiment with a few accounts that had been difficult. The feature is still live and still doing this work today.
+    `,
+    link: { label: "Read more about the release", href: "https://www.spotdraft.com/blog/accelerated-contracting-how-spotdraft-helps-you-execute-faster#:~:text=manage%20contracts%20effortlessly.-,Never%20Miss%20a%20Signature%20Again%20with%20Signing%20Queue" },
+  },
 ];
 
 export function getProjectBySlug(slug: string) {
