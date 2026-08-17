@@ -115,14 +115,20 @@ export const projects: Project[] = [
     ],
     tools: ["Claude Artifacts", "Google Docs"],
     fullBreakdown: 
-    `Fans of most fictional universes imagine themselves as a character. People want to be Batman, Spider-Man, Iron Man. Harry Potter works differently. The fans I know don't want to be Harry, they want to be themselves in that world, holding their own wand, sorted into their own house, casting the spells they've had memorised since they were eleven. That distinction turned out to be the whole design brief. A game built on it can't ask you to play as someone. It has to hand you a wand and get out of the way.
+    `
+    **Nobody wants to be Harry**
+    Fans of most fictional universes imagine themselves as a character. People want to be Batman, Spider-Man, Iron Man. Harry Potter works differently. The fans I know don't want to be Harry, they want to be themselves in that world, holding their own wand, sorted into their own house, casting the spells they've had memorised since they were eleven. That distinction turned out to be the whole design brief. A game built on it can't ask you to play as someone. It has to hand you a wand and get out of the way.
 
+    **The shape of a duel**
     The idea arrived somewhere between a run of board game nights and another rewatch of the films. A duel between two friends, fought with spell cards. Each spell carries a damage rating and a probability of connecting, you reveal your card, roll to see whether it lands, and track your health down from ten. No characters to pick, no abilities to inherit. The only thing separating the two players is what's in their hand and what they do with it.
 
+    **Balancing damage against luck**
     I started a document to work through the mechanics and built out the full spell list, giving each one a damage value and a hit probability tied to specific dice outcomes. The two ends of that range set the rule for everything in between. Avada Kedavra ends the duel on contact, so it has to be the hardest thing in the deck to land, sitting at two sixes on a double roll. Stupefy is the spell everyone knows and everyone throws, so it does modest damage but connects five times out of six. Every other card was placed on the line between those two, and I added healing, defensive spells and special effects on top so the duel had a shape beyond trading damage.
 
+    **Playtesting without printing a single card**
     Playtesting was the next problem. Printing real cards was too slow and too expensive for something still changing every few days, so I used Claude Artifacts to build a playable prototype instead. I handed it the rules document, the card wireframes and the spell list with their characteristics, and got back a working version I could play myself and send to other people. Feedback came back in days instead of weeks.
 
+    **What changed, and what's next**
     That loop is what let me rebalance properly. I adjusted damage values and hit probabilities until the devastating spells stayed genuinely rare and the safe ones stayed worth playing. Next is another pass on the mechanics, particularly status effects and how long they persist. Longer term, a licensed version would need the right partner, and that's a conversation worth having once the design holds up on its own.`,
     link: { label: "Play the prototype here", href: "https://claude.ai/public/artifacts/3a3c5d33-8e6d-4018-891b-6af72f1d34e3" },
   },
@@ -187,7 +193,7 @@ export const projects: Project[] = [
     tools: ["Figma", "Google Docs", "SQL", "User Testing", "Product Discovery", "Amplitude"],
     fullBreakdown: 
     `
-    **The problem I was handed*
+    **The problem I was handed**
     This started as a direction from leadership: make it possible to sign multiple contracts in one flow. Before building anything, I ran discovery with customers and SMEs, including our own CEO, who's a power user of the product. What I learned reframed the problem. Every B2B SaaS deal involves a stack of contracts, a SaaS agreement, an order form, NDAs, and so on. They all get sent to the same signatory, but each one lands as a separate signing request. That fragmentation had a cost: with contracts arriving as scattered individual requests, some would fall through the cracks and go unsigned, stalling the deals that depended on them. Users were coping by opening every request in its own browser tab and working through them one at a time. I also learned the primary persona was C-suite and senior executives, the people signing the most and with the least patience for friction.
     
     **Framing the problem and shaping a solution**
