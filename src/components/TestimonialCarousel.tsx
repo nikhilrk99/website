@@ -37,31 +37,6 @@ export default function TestimonialCarousel({
     return () => clearInterval(interval);
   }, []);
 
-  // While the user is manually interacting (hover/touch pauses autoplay),
-  // loop back to the start once they scroll to the end themselves.
-  useEffect(() => {
-    const container = scrollRef.current;
-    if (!container) return;
-
-    let settleTimeout: ReturnType<typeof setTimeout>;
-    const handleScroll = () => {
-      if (!pausedRef.current) return;
-      clearTimeout(settleTimeout);
-      settleTimeout = setTimeout(() => {
-        const maxScrollLeft = container.scrollWidth - container.clientWidth;
-        if (container.scrollLeft >= maxScrollLeft - 1) {
-          container.scrollTo({ left: 0, behavior: "smooth" });
-        }
-      }, 200);
-    };
-
-    container.addEventListener("scroll", handleScroll);
-    return () => {
-      container.removeEventListener("scroll", handleScroll);
-      clearTimeout(settleTimeout);
-    };
-  }, []);
-
   const pause = () => {
     pausedRef.current = true;
   };
@@ -76,7 +51,7 @@ export default function TestimonialCarousel({
       onMouseLeave={resume}
       onTouchStart={pause}
       onTouchEnd={resume}
-      className={`flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${className}`}
+      className={`relative flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${className}`}
     >
       {children}
     </div>

@@ -17,26 +17,34 @@ const testimonials = [
     // control spacing — an extra blank line adds extra gap.
     quote: `Nikhil joined SpotDraft in 2023 and quickly became a key driver of product success. He has a remarkable ability to take feedback - from both leadership and customers—and turn it into impactful solutions.
 
-One of his key contributions was streamlining the contract signing process, significantly reducing turnaround time - a feature widely adopted by executives across our customer base. His strategic thinking and execution have made a tangible difference. 
+            One of his key contributions was streamlining the contract signing process, significantly reducing turnaround time - a feature widely adopted by executives across our customer base. His strategic thinking and execution have made a tangible difference. 
 
-Any company would be lucky to have Nikhil as a Product Manager.`,
+            Any company would be lucky to have Nikhil as a Product Manager.`,
     name: "[Shashank Bijapur, CEO @ SpotDraft]",
   },
   {
     quote: `Nikhil joined SpotDraft as a product manager and quickly became an essential part of the team. He consistently demonstrated a strong ability to identify key problems, collaborate across teams, and build impactful solutions.
 
-What stands out most about Nikhil is his growth mindset. He transformed from someone still developing his data skills into a data-first PM who uses metrics to guide decisions without losing sight of customer needs. His proactive ownership of projects, like implementing a feature to help signatures on SpotDraft be collected 80% faster, made a tangible impact on the overall customer experience.
+            What stands out most about Nikhil is his growth mindset. He transformed from someone still developing his data skills into a data-first PM who uses metrics to guide decisions without losing sight of customer needs. His proactive ownership of projects, like implementing a feature to help signatures on SpotDraft be collected 80% faster, made a tangible impact on the overall customer experience.
 
-Any team would benefit from Nikhil’s curiosity, execution skills, and customer-centric approach. I highly recommend him!`,
+            Any team would benefit from Nikhil’s curiosity, execution skills, and customer-centric approach. I highly recommend him!`,
     name: "[Rohith Salim, Ex-Founder & CPO @ SpotDraft]",
   },
   {
     quote: `Nikhil joined SpotDraft as a young PM in 2023, full of energy and fresh ideas. From the start, he showed an eagerness to take on complex projects, quickly proving himself as someone I could trust to engage with customers, gather insights, and make well-informed decisions.
 
-While he was initially raw in how he approached data, he actively worked on sharpening that skill—and today, he is a data-first PM who balances intuition with metrics-driven decision-making. His ability to navigate ambiguity, and willingness to take ownership have made him an invaluable part of the team. 
+            While he was initially raw in how he approached data, he actively worked on sharpening that skill—and today, he is a data-first PM who balances intuition with metrics-driven decision-making. His ability to navigate ambiguity, and willingness to take ownership have made him an invaluable part of the team. 
 
-Anyone looking for a product manager who learns fast, listens well, and isn’t afraid to take on challenges would be lucky to work with Nikhil.`,
+            Anyone looking for a product manager who learns fast, listens well, and isn’t afraid to take on challenges would be lucky to work with Nikhil.`,
     name: "[Rammath Shenoy, Ex-Head of Product @ SpotDraft]",
+  },
+  {
+    quote: `I had the opportunity to work with Nikhil on several projects at SpotDraft, and he is an exceptional product manager. He thinks deeply about the end-to-end user experience and uses data to make thoughtful decisions. He stays focused on solving user problems at their core and is excellent at collaborating with stakeholders. 
+    
+            Nikhil also has strong design judgment and consistently helps teams refine the product through insightful feedback and additional research. 
+
+            I really enjoyed working with him, and together with our engineering team, we were able to move quickly and ship products efficiently. His dedication to delivering the best possible experience for users makes him a valuable addition to any team.`,
+    name: "[Mohit Kumar Singh, Ex-Principal Product Designer @ SpotDraft]",
   },
 ];
 
