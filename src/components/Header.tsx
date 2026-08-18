@@ -32,7 +32,10 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-void/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <Link href="/" className="font-display text-lg font-bold text-offwhite">
+        <Link
+          href="/"
+          className="whitespace-nowrap font-display text-lg font-bold text-offwhite"
+        >
           {siteConfig.name}
         </Link>
 
@@ -52,20 +55,20 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 sm:gap-4">
           <a
             href={siteConfig.linkedinUrl}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="text-muted transition-colors hover:text-offwhite"
+            className="hidden text-muted transition-colors hover:text-offwhite sm:block"
           >
             <LinkedInIcon className="h-5 w-5" />
           </a>
 
           <ScrollLink
             href={workWithMeHref}
-            className="rounded-full bg-signal px-5 py-2 font-mono text-sm uppercase tracking-wide text-offwhite transition-colors hover:bg-signal-deep"
+            className="whitespace-nowrap rounded-full bg-signal px-5 py-2 font-mono text-sm uppercase tracking-wide text-offwhite transition-colors hover:bg-signal-deep"
           >
             Work with me
           </ScrollLink>
@@ -98,6 +101,14 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
+          <a
+            href={siteConfig.linkedinUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted transition-colors hover:text-offwhite"
+          >
+            LinkedIn
+          </a>
         </nav>
       )}
     </header>
