@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { siteConfig } from "@/lib/site-config";
+import LinkedInIcon from "@/components/LinkedInIcon";
 import ScrollLink from "@/components/ScrollLink";
 
 const navLinks = [
@@ -52,6 +53,16 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-4">
+          <a
+            href={siteConfig.linkedinUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="text-muted transition-colors hover:text-offwhite"
+          >
+            <LinkedInIcon className="h-5 w-5" />
+          </a>
+
           <ScrollLink
             href={workWithMeHref}
             className="rounded-full bg-signal px-5 py-2 font-mono text-sm uppercase tracking-wide text-offwhite transition-colors hover:bg-signal-deep"

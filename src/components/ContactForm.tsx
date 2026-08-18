@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { siteConfig } from "@/lib/site-config";
+import LinkedInIcon from "@/components/LinkedInIcon";
 
 const purposes = ["Hiring", "Product Queries", "General Chat"];
 
@@ -166,20 +168,32 @@ export default function ContactForm() {
         />
       </div>
 
-      <div className="flex items-center gap-4">
-        <button
-          type="submit"
-          disabled={status === "submitting"}
-          className="rounded-full bg-signal px-8 py-3 font-mono text-sm uppercase tracking-wide text-offwhite transition-colors hover:bg-signal-deep disabled:cursor-not-allowed disabled:opacity-60"
+      <div className="flex flex-wrap items-center justify-between gap-4">
+        <div className="flex items-center gap-4">
+          <button
+            type="submit"
+            disabled={status === "submitting"}
+            className="rounded-full bg-signal px-8 py-3 font-mono text-sm uppercase tracking-wide text-offwhite transition-colors hover:bg-signal-deep disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            {status === "submitting" ? "Sending..." : "Send message"}
+          </button>
+          {status === "success" && (
+            <p className="font-mono text-sm text-signal">Thanks — I&apos;ll get back to you soon.</p>
+          )}
+          {status === "error" && (
+            <p className="font-mono text-sm text-signal">{errorMessage}</p>
+          )}
+        </div>
+
+        <a
+          href={siteConfig.linkedinUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 rounded-full border border-white/10 px-6 py-3 font-mono text-sm uppercase tracking-wide text-offwhite transition-colors hover:border-signal/50 hover:text-signal"
         >
-          {status === "submitting" ? "Sending..." : "Send message"}
-        </button>
-        {status === "success" && (
-          <p className="font-mono text-sm text-signal">Thanks — I&apos;ll get back to you soon.</p>
-        )}
-        {status === "error" && (
-          <p className="font-mono text-sm text-signal">{errorMessage}</p>
-        )}
+          Connect on LinkedIn
+          <LinkedInIcon className="h-4 w-4" />
+        </a>
       </div>
     </form>
   );
