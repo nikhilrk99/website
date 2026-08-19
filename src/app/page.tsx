@@ -46,6 +46,12 @@ const testimonials = [
             I really enjoyed working with him, and together with our engineering team, we were able to move quickly and ship products efficiently. His dedication to delivering the best possible experience for users makes him a valuable addition to any team.`,
     name: "[Mohit Kumar Singh, Ex-Principal Product Designer @ SpotDraft]",
   },
+    {
+    quote: `Nikhil brought a lot energy and drive to work. We used to be the youngest PMs in the team at SpotDraft and he had plenty to show for it. He took on a very complicated project to revamp our workflow builder, which to this day serves the foundation for a lot of things, and was well thought out back in 2023. 
+    
+            Product, design, and engineering always liked collaborating with Nikhil because of the positivity he brings to the room, and he built strong relationships with the GTM org, and even many customers, to help drive business and customer outcomes, ultimately. 10/10 would work with him again.`,
+    name: "[Jaskaran Bhatia, Senior Product Manager @ SpotDraft]",
+  },
 ];
 
 export default function Home() {
