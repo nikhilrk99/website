@@ -121,16 +121,26 @@ export default function Home() {
       {/* Navigation boxes */}
       <section className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-6 px-6 py-16 sm:grid-cols-3">
         {[
-          { href: "/projects", label: "Projects" },
-          { href: "/resume", label: "Resume" },
-          { href: "/about", label: "About Me" },
+          { href: "/projects", label: "Projects", photo: "/Projects.jpeg" },
+          { href: "/resume", label: "Resume", photo: "/Resume.jpeg" },
+          { href: "/about", label: "About Me", photo: "/AboutMe.jpeg" },
         ].map((item, i) => (
           <ScrollReveal key={item.href} delay={2 * STAGGER + i * 0.06}>
             <Link
               href={item.href}
-              className="flex aspect-square flex-col items-start justify-end rounded-2xl border border-white/10 bg-card p-8 transition-colors hover:border-signal/50"
+              className="group relative flex aspect-square flex-col items-start justify-end overflow-hidden rounded-2xl border border-white/10 bg-card p-8 transition-colors hover:border-signal/50"
             >
-              <span className="font-display text-2xl font-bold text-offwhite">
+              {item.photo && (
+                <Image
+                  src={item.photo}
+                  alt=""
+                  fill
+                  sizes="(min-width: 640px) 33vw, 100vw"
+                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                />
+              )}
+              <div className="absolute inset-0 bg-gradient-to-t from-void/90 via-void/30 to-transparent" />
+              <span className="relative font-display text-2xl font-bold text-offwhite">
                 {item.label}
               </span>
             </Link>

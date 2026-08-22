@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
@@ -56,12 +55,13 @@ export default async function ProjectDetailPage({
         </div>
         {project.hasPhoto !== false && (
           project.photo ? (
-            <Image
+            // Width is unknown ahead of time; a plain <img> lets the browser
+            // size it from the real file so a fixed height never crops or letterboxes.
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
               src={project.photo}
               alt={`${project.title} photo`}
-              width={224}
-              height={224}
-              className="h-44 w-44 shrink-0 rounded-2xl object-cover sm:h-56 sm:w-56"
+              className="h-44 w-auto shrink-0 rounded-2xl bg-card sm:h-56"
             />
           ) : (
             <ImagePlaceholder

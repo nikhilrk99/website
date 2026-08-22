@@ -103,7 +103,7 @@ export const projects: Project[] = [
     context: "Personal",
     role: "[Add your role on this project]",
     hasPhoto: true,
-    photo: "", // e.g. "/projects/hp-battle-card-game.jpg"
+    photo: "/HPCardGame.png",
     brief: "I designed a wizarding duel that plays out across a table with a single deck and a pair of dice. Two players start at ten hearts, draw a hand, and reveal a spell at the same moment, then roll to see whether it finds its target. Because neither side knows what the other has committed to, every turn is a read on your opponent as much as a choice from your own hand. Most of the design work went into the relationship between damage and probability, making the devastating spells hard enough to land that reaching for them is a real gamble, and the reliable ones modest enough that a duel has room to swing.",
     whatIDid: [
       "Designed the 52-card spell set around a damage and probability curve",
@@ -139,7 +139,7 @@ export const projects: Project[] = [
     context: "Work",
     role: "Lead Product Manager",
     hasPhoto: true,
-    photo: "", // e.g. "/projects/hp-battle-card-game.jpg"
+    photo: "/WorkflowManager.jpeg",
     brief: 
     `Creating contracts was slow and inconsistent. Every workflow depended on manual setup, business teams waited on legal to draft and route each contract, and approvals happened ad-hoc with no guaranteed compliance. Workflow Manager is a no-code tool that lets companies build their own contract workflows in a self-serve manner. Teams create contracts faster using templates and forms, and every contract stays compliant through automated conditional approvals that route to the right stakeholders.
 
@@ -175,7 +175,7 @@ export const projects: Project[] = [
     context: "Work",
     role: "Lead Product Manager",
     hasPhoto: true,
-    photo: "", // e.g. "/projects/hp-battle-card-game.jpg"
+    photo: "/SigningQueue.jpeg",
     brief: 
     `Signing contracts was a stop-start process. People would sign one, leave the tool, and forget the three others sitting in their queue, so backlogs grew and deals stalled. Signing Queue fixed the flow itself. Once you sign a contract, it automatically surfaces the others waiting on your signature and lines them up to clear one by one.
 
